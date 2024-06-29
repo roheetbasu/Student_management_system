@@ -1,6 +1,8 @@
 import json
 import os
 import pathlib
+import Data_validate
+import Exception_handling
  
 class Student():
     def __init__(self,name:str,email:str,phone_num:int,address:str,roll_no:int,marks:dict) -> None:
@@ -66,12 +68,12 @@ class Student():
 def Validate_email(email) -> bool:
     if '@' in email:
         return True
-    return False 
+    return False
 
 def Validate_num(num) -> bool:
     if len(num) == 10:
         return True
-    return False 
+    return False
     
 def Rank_cal() -> None:
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
@@ -80,7 +82,6 @@ def Rank_cal() -> None:
     for v in range(len(json_content)):
         List1.append(json_content[v]["percentage"])
     List1.sort(reverse=True)
-    print(List1)
     for i,idx in enumerate(List1):
         for records in json_content:
             if records["percentage"] == idx:
@@ -96,7 +97,7 @@ def Entry4students() -> None:
     print(f"Enter the following details---------")
     name = input("Name:")
     email = input("Email:")
-    phone_num = int(input("Phone Number:"))
+    phone_num = input("Phone Number:")
     address = input("Address:")
     roll_no = int(input("Roll No:"))
     print("Enter Marks-------")
@@ -106,19 +107,36 @@ def Entry4students() -> None:
         "Science" : int(input("Science:")),
         "Computer" : int(input("Computer:"))
     }
-    while Validate_email():
-        print(f'Please enter a valid email-----------------')
-        email = input("Email:")
-    while Validate_num(phone_num):
-        print(f'Please enter a valid phone number(10 digits)------------')
-        phone_num = int(input("Phone Number:"))
+    try:
+        if Validate_email(email):
+            pass
+        else:
+            raise Exception_handling.InvalidEmailError
+    except Exception_handling.InvalidEmailError as e:
+        print(e.message)
+        
+    try:
+        if  Validate_num(phone_num):
+            pass
+        else:
+            raise Exception_handling.InvalidPhoneNoError
+    except Exception_handling.InvalidPhoneNoError as e:
+        print(e.message)
+            
+    try:
+        if  Data_validate.Data_validationStudent(roll_no):
+            pass
+        else:
+            raise Exception_handling.NOmatchingRoll_NoError
+    except Exception_handling.NOmatchingRoll_NoError as e:
+        print(e.message)
+            
     Student1 = Student.create_student(name,email,phone_num,address,roll_no,marks)
-    Student1.Percentage_calc()
     Student1.Pass_fail_deter()
+    Student1.Percentage_calc()
     Student1.Highest_Lowest_score()
     Student1.LoadFirstData()
     Rank_cal()
-    
       
 def Display_all() -> None:
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
@@ -159,3 +177,4 @@ def search() -> None:
                 
 
 
+Entry4students()

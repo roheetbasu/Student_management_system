@@ -1,6 +1,8 @@
 import json
 import os.path
 import pathlib
+import Data_validate
+import Exception_handling
 
 # path = os.getcwd()
 # filename = "TeacherData.json"
@@ -48,23 +50,40 @@ def Validate_email(email) -> bool:
 
 def Validate_num(num) -> bool:
     if len(num) == 10:
-        return True
-    return False 
+        return False
 
 def Entry4Teacher() -> None:
     print(f"Enter the following details---------")
     name = input("Name:")
     email = input("Email:")
-    phone_num = int(input("Phone Number:"))
+    phone_num = input("Phone Number:")
     address = input("Address:")
     subject = input("Subject:")
     ID = int(input("ID:"))
-    while Validate_email():
-        print(f'Please enter a valid email-----------------')
-        email = input("Email:")
-    while Validate_num(phone_num):
-        print(f'Please enter a valid phone number(10 digits)------------')
-        phone_num = int(input("Phone Number:"))
+    try:
+        if Validate_email(email):
+            pass
+        else:
+            raise Exception_handling.InvalidEmailError
+    except Exception_handling.InvalidEmailError as e:
+        print(e.message)
+    
+    try:
+        if Validate_num(phone_num):
+            pass
+        else:
+            raise Exception_handling.InvalidPhoneNoError
+    except Exception_handling.InvalidPhoneNoError as e:
+        print(e.message)
+    
+    try:
+        if Data_validate.Data_validationTeacher(ID):
+            pass
+        else:
+            raise Exception_handling.NomatchingIDError
+    except Exception_handling.NomatchingIDError as e:
+        print(e.message)
+        
     Teacher1 = Teacher.create_Teacher(name,email,phone_num,address,subject,ID)
     Teacher1.LoadFirstData()
     
@@ -106,4 +125,3 @@ def search() -> None:
             for k,v in record.items():
                 print(f"{k} = {v}")
 
-        

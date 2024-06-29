@@ -4,9 +4,7 @@ import json
 import os 
 import pathlib
 
-filepath = os.path.abspath("Data_storage\\studentsData.json")
-
-with open(filepath,"r") as file:
+with open(r"D:\Python\Project1\Data_storage\TeacherData.json","r") as file:
     json_content = json.load(file)
 
 def authentication_for_teacher() -> bool:

@@ -15,7 +15,7 @@
         "percentage": 80.75,
         "Highest": 90,
         "Lowest": 67,
-        "Rank": 2
+        "Rank": 3
     },
     {
         "name": "Hari",
@@ -33,6 +33,42 @@
         "percentage": 81.5,
         "Highest": 99,
         "Lowest": 60,
+        "Rank": 2
+    },
+    {
+        "name": "sulav",
+        "email": "spkt",
+        "phone_num": "6453",
+        "address": "banepa",
+        "roll_no": 40,
+        "marks": {
+            "Maths": 90,
+            "English": 90,
+            "Science": 90,
+            "Computer": 30
+        },
+        "status": "Fail",
+        "percentage": null,
+        "Highest": 90,
+        "Lowest": 30,
+        "Rank": null
+    },
+    {
+        "name": "Tuyal Shrestha",
+        "email": "tuyalshrestha@gmail.com",
+        "phone_num": "9898989898",
+        "address": "ktm",
+        "roll_no": 46,
+        "marks": {
+            "Maths": 90,
+            "English": 90,
+            "Science": 90,
+            "Computer": 90
+        },
+        "status": "Pass",
+        "percentage": 90.0,
+        "Highest": 90,
+        "Lowest": 90,
         "Rank": 1
     }
 ]
