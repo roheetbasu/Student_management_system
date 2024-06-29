@@ -3,7 +3,7 @@ import os
 import pathlib
  
 class Student():
-    def __init__(self,name,email,phone_num,address,roll_no,marks) -> None:
+    def __init__(self,name:str,email:str,phone_num:int,address:str,roll_no:int,marks:dict) -> None:
         self.name = name
         self.email = email
         self.phone_num = phone_num
@@ -17,7 +17,7 @@ class Student():
         self.Rank = None
         
     @classmethod
-    def create_student(cls,name,email,phone_num,address,roll_no,marks)->None:
+    def create_student(cls,name:str,email:str,phone_num:int,address:str,roll_no:int,marks:dict)->None:
         return cls(name,email,phone_num,address,roll_no,marks)
     
     def Pass_fail_deter(self):
@@ -27,16 +27,17 @@ class Student():
                 self.status = "Fail"
                 break
     
-    def Highest_Lowest_score(self):
+    def Highest_Lowest_score(self) -> None:
         self.Highest = max(self.marks.values())
         self.Lowest = min(self.marks.values())
     
-    def Percentage_calc(self):
+    def Percentage_calc(self) -> None:
         self.percentage = sum(self.marks.values())/len(self.marks.values())
         if self.status == 'Fail':
             self.percentage = None
-        
-    def LoadFirstData(self):
+      
+    
+    def LoadFirstData(self) -> None:
         Dict1 = {
                 "name" : self.name,
                 "email" : self.email,
@@ -61,8 +62,18 @@ class Student():
             with open(r"D:\Python\Project1\Data_storage\studentsData.json","w") as file:
                 List1.append(Dict1)
                 json.dump(List1,file,indent=4) 
+
+def Validate_email(email) -> bool:
+    if '@' in email:
+        return True
+    return False 
+
+def Validate_num(num) -> bool:
+    if len(num) == 10:
+        return True
+    return False 
     
-def Rank_cal():
+def Rank_cal() -> None:
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
         json_content = json.load(file)
     List1 = []
@@ -81,13 +92,13 @@ def Rank_cal():
         json.dump(json_content,file,indent=4)
             
                     
-def Entry4students():
+def Entry4students() -> None:
     print(f"Enter the following details---------")
     name = input("Name:")
     email = input("Email:")
-    phone_num = input("Phone Number:")
+    phone_num = int(input("Phone Number:"))
     address = input("Address:")
-    roll_no = input("Roll No:")
+    roll_no = int(input("Roll No:"))
     print("Enter Marks-------")
     marks = {
         "Maths" : int(input("Maths:")),
@@ -95,6 +106,12 @@ def Entry4students():
         "Science" : int(input("Science:")),
         "Computer" : int(input("Computer:"))
     }
+    while Validate_email():
+        print(f'Please enter a valid email-----------------')
+        email = input("Email:")
+    while Validate_num(phone_num):
+        print(f'Please enter a valid phone number(10 digits)------------')
+        phone_num = int(input("Phone Number:"))
     Student1 = Student.create_student(name,email,phone_num,address,roll_no,marks)
     Student1.Percentage_calc()
     Student1.Pass_fail_deter()
@@ -103,7 +120,7 @@ def Entry4students():
     Rank_cal()
     
       
-def Display_all():
+def Display_all() -> None:
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
         json_content = json.load(file)
             
@@ -112,7 +129,7 @@ def Display_all():
         print(f'Email:{i["email"]}')
         print(f'Email:{i["address"]}')
             
-def Delete():
+def Delete() -> None:
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
         json_content = json.load(file)
             
@@ -129,7 +146,7 @@ def Delete():
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","w") as file:
         json.dump(list1,file,indent = 4)
 
-def search():
+def search() -> None:
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
         json_content = json.load(file)
             
