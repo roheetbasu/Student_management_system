@@ -1,18 +1,26 @@
 [
     {
-        "name": "Roheet Basukala",
-        "email": "roheetbasu@gmail.com",
-        "phone_num": "9860968878",
-        "address": "Bhaktapur",
-        "subject": "English",
-        "ID": "0001"
-    },
-    {
         "name": "Sujan",
         "email": "sujanr7@gmail.com",
         "phone_num": "983423234",
         "address": "ktm",
         "subject": "GOd",
-        "ID": "0003"
+        "ID": 101
+    },
+    {
+        "name": "Roheet",
+        "email": "basu@roheet",
+        "phone_num": "9877987798",
+        "address": "bkt",
+        "subject": "prob",
+        "ID": 100
+    },
+    {
+        "name": "Ram",
+        "email": "Ram@bahadru",
+        "phone_num": "9854456733",
+        "address": "Nepal",
+        "subject": "Nepali",
+        "ID": 102
     }
 ]

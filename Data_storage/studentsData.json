@@ -4,7 +4,7 @@
         "email": "basu",
         "phone_num": "999999",
         "address": "bkt",
-        "roll_no": "31",
+        "roll_no": 31,
         "marks": {
             "Maths": 90,
             "English": 67,
@@ -15,25 +15,7 @@
         "percentage": 80.75,
         "Highest": 90,
         "Lowest": 67,
-        "Rank": 3
-    },
-    {
-        "name": "Hari",
-        "email": "hariram",
-        "phone_num": "88888",
-        "address": "ktm",
-        "roll_no": "00",
-        "marks": {
-            "Maths": 99,
-            "English": 89,
-            "Science": 78,
-            "Computer": 60
-        },
-        "status": "Pass",
-        "percentage": 81.5,
-        "Highest": 99,
-        "Lowest": 60,
-        "Rank": 2
+        "Rank": 4
     },
     {
         "name": "sulav",
@@ -69,6 +51,60 @@
         "percentage": 90.0,
         "Highest": 90,
         "Lowest": 90,
+        "Rank": 3
+    },
+    {
+        "name": "Saman Gosai",
+        "email": "Sama",
+        "phone_num": "9898989898",
+        "address": "bkt",
+        "roll_no": 33,
+        "marks": {
+            "Maths": 99,
+            "English": 99,
+            "Science": 99,
+            "Computer": 99
+        },
+        "status": "Pass",
+        "percentage": 99.0,
+        "Highest": 99,
+        "Lowest": 99,
         "Rank": 1
+    },
+    {
+        "name": "Uddav",
+        "email": "Yuddav@raj",
+        "phone_num": "9999999999",
+        "address": "ktm",
+        "roll_no": 47,
+        "marks": {
+            "Maths": 90,
+            "English": 90,
+            "Science": 99,
+            "Computer": 89
+        },
+        "status": "Pass",
+        "percentage": 92.0,
+        "Highest": 99,
+        "Lowest": 89,
+        "Rank": 2
+    },
+    {
+        "name": "Raj",
+        "email": "RAj",
+        "phone_num": "9860968878",
+        "address": "bkt",
+        "roll_no": 47,
+        "marks": {
+            "Maths": 90,
+            "English": 78,
+            "Science": 67,
+            "Computer": 88
+        },
+        "status": "Pass",
+        "percentage": 80.75,
+        "Highest": 90,
+        "Lowest": 67,
+        "Rank": 4
     }
 ]
