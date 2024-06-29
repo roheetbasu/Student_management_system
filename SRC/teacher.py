@@ -69,7 +69,6 @@ def Entry4Teacher() -> None:
     Teacher1.LoadFirstData()
     
     
-    
 def Display_all() -> None:
     with open(r"D:\Python\Project1\Data_storage\TeacherData.json","r") as file:
         json_content = json.load(file)
