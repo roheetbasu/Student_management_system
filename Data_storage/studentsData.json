@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Roheet",
+        "email": "basu",
+        "phone_num": "999999",
+        "address": "bkt",
+        "roll_no": "31",
+        "marks": {
+            "Maths": 90,
+            "English": 67,
+            "Science": 78,
+            "Computer": 88
+        },
+        "status": "Pass",
+        "percentage": 80.75,
+        "Highest": 90,
+        "Lowest": 67,
+        "Rank": 2
+    },
+    {
+        "name": "Hari",
+        "email": "hariram",
+        "phone_num": "88888",
+        "address": "ktm",
+        "roll_no": "00",
+        "marks": {
+            "Maths": 99,
+            "English": 89,
+            "Science": 78,
+            "Computer": 60
+        },
+        "status": "Pass",
+        "percentage": 81.5,
+        "Highest": 99,
+        "Lowest": 60,
+        "Rank": 1
+    }
+]
