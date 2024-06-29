@@ -88,23 +88,5 @@
         "Highest": 99,
         "Lowest": 89,
         "Rank": 2
-    },
-    {
-        "name": "Raj",
-        "email": "RAj",
-        "phone_num": "9860968878",
-        "address": "bkt",
-        "roll_no": 47,
-        "marks": {
-            "Maths": 90,
-            "English": 78,
-            "Science": 67,
-            "Computer": 88
-        },
-        "status": "Pass",
-        "percentage": 80.75,
-        "Highest": 90,
-        "Lowest": 67,
-        "Rank": 4
     }
 ]

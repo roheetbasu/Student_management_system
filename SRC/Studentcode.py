@@ -176,6 +176,7 @@ def Delete() -> None:
         for k,v in record.items():
             dict1[k] = v
         list1.append(dict1)
+    Rank_cal()
         
     with open(r"D:\Python\Project1\Data_storage\studentsData.json","w") as file:
         json.dump(list1,file,indent = 4)
