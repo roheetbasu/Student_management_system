@@ -44,9 +44,11 @@ class Teacher():
                 json.dump(List1,file,indent=4)    
                 
 def Validate_email(email) -> bool:
-    if '@' in email:
+    email = email.split('@')
+    if email[-1] == 'gmail.com':
         return True
-    return False 
+    return False
+
 
 def Validate_num(num) -> bool:
     if len(num) == 10:
@@ -56,41 +58,38 @@ def Validate_num(num) -> bool:
 def Entry4Teacher() -> None:
     print(f"Enter the following details---------")
     name = input("Name:")
-    email = input("Email:")
+    while True:
+        email = input("Email:")
+        try:
+            if Validate_email(email):
+                break
+            else:
+                raise Exception_handling.InvalidEmailError(email)
+        except Exception_handling.InvalidEmailError as e:
+            print(e.message)
+    while True:
+        phone_num = input("Phone Number:")
+        try:
+            if  Validate_num(phone_num):
+                break
+            else:
+                raise Exception_handling.InvalidPhoneNoError(phone_num)
+        except Exception_handling.InvalidPhoneNoError as e:
+            print(e.message)
 
-    try:
-        if Validate_email(email):
-            pass
-        else:
-            raise Exception_handling.InvalidEmailError(email)
-    except Exception_handling.InvalidEmailError as e:
-        print(e.message)
-        exit()
-        
-    phone_num = input("Phone Number:")
-    
-    try:
-        if Validate_num(phone_num):
-            pass
-        else:
-            raise Exception_handling.InvalidPhoneNoError(phone_num)
-    except Exception_handling.InvalidPhoneNoError as e:
-        print(e.message)
-        exit()
     
     address = input("Address:")
     subject = input("Subject:")
-    ID = int(input("ID:"))
-    
-    try:
-        if Data_validate.Data_validationTeacher(ID):
-            pass
-        else:
-            raise Exception_handling.NomatchingIDError(ID)
-    except Exception_handling.NomatchingIDError as e:
-        print(e.message)
-        exit()
-        
+    while True:
+        ID = int(input("ID:"))
+        try:
+            if Data_validate.Data_validationTeacher(ID):
+                break
+            else:
+                raise Exception_handling.NomatchingIDError(ID)
+        except Exception_handling.NomatchingIDError as e:
+            print(e.message)
+            
     Teacher1 = Teacher.create_Teacher(name,email,phone_num,address,subject,ID)
     Teacher1.LoadFirstData()
     

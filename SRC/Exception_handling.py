@@ -1,7 +1,7 @@
 class NomatchingIDError(Exception):
     def __init__(self,ID):
         self.ID =ID
-        self.message = f'{ID} is already used!!'
+        self.message = f'{ID} is already used!!.Please use another one.'
         super().__init__(self.message)
         
 
@@ -34,6 +34,6 @@ class InvalidPhoneNoError(Exception):
 class InvalidEmailError(Exception):
     def __init__(self,email):
         self.phone_num = email
-        self.message = f"{email} is invalid. Please use @ to write email!!"
+        self.message = f"{email} is invalid. Please use @gmail.com to write email!!"
         super().__init__(self.message)
 

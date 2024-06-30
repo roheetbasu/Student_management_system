@@ -67,7 +67,8 @@ class Student():
                 json.dump(List1,file,indent=4) 
 
 def Validate_email(email) -> bool:
-    if '@' in email:
+    email = email.split('@')
+    if email[-1] == 'gmail.com':
         return True
     return False
 
@@ -99,35 +100,37 @@ def Rank_cal() -> None:
 def Entry4students() -> None:
     print(f"Enter the following details---------")
     name = input("Name:")
-    email = input("Email:")
-    try:
-        if Validate_email(email):
-            pass
-        else:
-            raise Exception_handling.InvalidEmailError(email)
-    except Exception_handling.InvalidEmailError as e:
-        print(e.message)
-        exit()
-    phone_num = input("Phone Number:")
-    try:
-        if  Validate_num(phone_num):
-            pass
-        else:
-            raise Exception_handling.InvalidPhoneNoError(phone_num)
-    except Exception_handling.InvalidPhoneNoError as e:
-        print(e.message)
-        exit()
+    while True:
+        email = input("Email:")
+        try:
+            if Validate_email(email):
+                break
+            else:
+                raise Exception_handling.InvalidEmailError(email)
+        except Exception_handling.InvalidEmailError as e:
+            print(e.message)
+    while True:
+        phone_num = input("Phone Number:")
+        try:
+            if  Validate_num(phone_num):
+                break
+            else:
+                raise Exception_handling.InvalidPhoneNoError(phone_num)
+        except Exception_handling.InvalidPhoneNoError as e:
+            print(e.message)
+
             
     address = input("Address:")
-    roll_no = int(input("Roll No:"))
-    try:
-        if  Data_validate.Data_validationStudent(roll_no):
-            pass
-        else:
-            raise Exception_handling.NOmatchingRoll_NoError(roll_no)
-    except Exception_handling.NOmatchingRoll_NoError as e:
-        print(e.message)
-        exit()
+    while True:
+        roll_no = int(input("Roll No:"))
+        try:
+            if  Data_validate.Data_validationStudent(roll_no):
+                break
+            else:
+                raise Exception_handling.NOmatchingRoll_NoError(roll_no)
+        except Exception_handling.NOmatchingRoll_NoError as e:
+            print(e.message)
+
         
     print("Enter Marks-------")
     marks = {

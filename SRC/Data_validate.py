@@ -9,14 +9,14 @@ with open(r"D:\Python\Project1\Data_storage\studentsData.json","r") as file:
 def Data_validationTeacher(ID:int)-> bool:
     for record in json_contentteacher:
         if record["ID"] == int(ID):
-            return True
-        return False
+            return False
+        return True
 
 
 def Data_validationStudent(roll_no:int)-> bool:
     for record in json_contentstudents:
         if record["roll_no"] == int(roll_no):
-            return True
-        return False
+            return False
+        return True
 
 

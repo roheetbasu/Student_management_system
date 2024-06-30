@@ -9,10 +9,18 @@
     },
     {
         "name": "Roheet",
-        "email": "basu@roheet",
+        "email": "basu@gmail.com",
         "phone_num": "9877987798",
         "address": "bkt",
         "subject": "prob",
         "ID": 100
+    },
+    {
+        "name": "Sumit",
+        "email": "sumit@gmail.com",
+        "phone_num": "9845653445",
+        "address": "Nepal",
+        "subject": "Software",
+        "ID": 102
     }
 ]

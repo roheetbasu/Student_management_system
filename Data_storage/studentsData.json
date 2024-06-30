@@ -1,8 +1,8 @@
 [
     {
         "name": "Roheet",
-        "email": "basu",
-        "phone_num": "999999",
+        "email": "basu@gmail.com",
+        "phone_num": "9999999999",
         "address": "bkt",
         "roll_no": 31,
         "marks": {
@@ -15,12 +15,12 @@
         "percentage": 80.75,
         "Highest": 90,
         "Lowest": 67,
-        "Rank": 4
+        "Rank": 5
     },
     {
         "name": "sulav",
-        "email": "spkt",
-        "phone_num": "6453",
+        "email": "spkt@gmail.com",
+        "phone_num": "6453344533",
         "address": "banepa",
         "roll_no": 40,
         "marks": {
@@ -55,7 +55,7 @@
     },
     {
         "name": "Saman Gosai",
-        "email": "Sama",
+        "email": "Sama@gmail.com",
         "phone_num": "9898989898",
         "address": "bkt",
         "roll_no": 33,
@@ -73,7 +73,7 @@
     },
     {
         "name": "Uddav",
-        "email": "Yuddav@raj",
+        "email": "Yuddav@gmail.com",
         "phone_num": "9999999999",
         "address": "ktm",
         "roll_no": 47,
@@ -88,5 +88,23 @@
         "Highest": 99,
         "Lowest": 89,
         "Rank": 2
+    },
+    {
+        "name": "Aashrutya",
+        "email": "acp@gmail.com",
+        "phone_num": "9867564532",
+        "address": "Nepal",
+        "roll_no": 2,
+        "marks": {
+            "Maths": 89,
+            "English": 89,
+            "Science": 89,
+            "Computer": 89
+        },
+        "status": "Pass",
+        "percentage": 89.0,
+        "Highest": 89,
+        "Lowest": 89,
+        "Rank": 4
     }
 ]
